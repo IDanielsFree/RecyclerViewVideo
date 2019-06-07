@@ -13,7 +13,6 @@ import java.util.Arrays;
 
 import idanielsfree.exoplayerrecyclerview.models.MediaObject;
 import idanielsfree.exoplayerrecyclerview.util.Resources;
-import idanielsfree.exoplayerrecyclerview.util.VerticalSpacingItemDecorator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initRecyclerView(){
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
-        VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(10);
-        mRecyclerView.addItemDecoration(itemDecorator);
 
         ArrayList<MediaObject> mediaObjects = new ArrayList<MediaObject>(Arrays.asList(Resources.MEDIA_OBJECTS));
         mRecyclerView.setMediaObjects(mediaObjects);
